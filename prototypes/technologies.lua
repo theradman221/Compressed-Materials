@@ -6,7 +6,7 @@ local tech1 = {
     --ores
     type = "technology",
     name = "compression-1",
-    icon = "__compressor__/graphics/compress-tech.png",
+    icon = "__Compressed Materials__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -17,7 +17,7 @@ local tech1 = {
         count = 100,
         ingredients =
         {
-            {"science-pack-1",1},
+            {"automation-science-pack",1},
         },
         time = 20
     }
@@ -27,7 +27,7 @@ local tech2 = {
     --items
     type = "technology",
     name = "compression-2",
-    icon = "__compressor__/graphics/compress-tech.png",
+    icon = "__Compressed Materials__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -38,7 +38,7 @@ local tech2 = {
         count = 150,
         ingredients =
         {
-            {"science-pack-1",1},
+            {"automation-science-pack",1},
         },
         time = 20
     }
@@ -48,7 +48,7 @@ local tech3 = {
     --tiles
     type = "technology",
     name = "compression-3",
-    icon = "__compressor__/graphics/compress-tech.png",
+    icon = "__Compressed Materials__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -59,7 +59,7 @@ local tech3 = {
         count = 200,
         ingredients =
         {
-            {"science-pack-1",1},
+            {"automation-science-pack",1},
         },
         time = 20
     }
@@ -69,7 +69,7 @@ local tech4 = {
     --ammo
     type = "technology",
     name = "compression-4",
-    icon = "__compressor__/graphics/compress-tech.png",
+    icon = "__Compressed Materials__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -80,8 +80,8 @@ local tech4 = {
         count = 100,
         ingredients =
         {
-            {"science-pack-1",1},
-            {"science-pack-2",1},
+            {"automation-science-pack",1},
+            {"logistic-science-pack",1},
             {"military-science-pack", 2}
         },
         time = 20
@@ -92,7 +92,7 @@ local tech5 = {
     --entities
     type = "technology",
     name = "compression-5",
-    icon = "__compressor__/graphics/compress-tech.png",
+    icon = "__Compressed Materials__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -103,8 +103,8 @@ local tech5 = {
         count = 200,
         ingredients =
         {
-            {"science-pack-1",1},
-            {"science-pack-2",1},
+            {"automation-science-pack",1},
+            {"logistic-science-pack",1},
             {"production-science-pack", 2}
         },
         time = 20
@@ -115,7 +115,7 @@ local tech6 = {
     --modules
     type = "technology",
     name = "compression-6",
-    icon = "__compressor__/graphics/compress-tech.png",
+    icon = "__Compressed Materials__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -126,10 +126,10 @@ local tech6 = {
         count = 150,
         ingredients =
         {
-            {"science-pack-1",1},
-            {"science-pack-2",1},
-            {"science-pack-3",1},
-            {"high-tech-science-pack", 2}
+            {"automation-science-pack",1},
+            {"logistic-science-pack",1},
+            {"chemical-science-pack",1},
+            {"production-science-pack", 2}
         },
         time = 20
     }
@@ -139,7 +139,7 @@ local tech7 = {
     --equipment
     type = "technology",
     name = "compression-7",
-    icon = "__compressor__/graphics/compress-tech.png",
+    icon = "__Compressed Materials__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -150,11 +150,11 @@ local tech7 = {
         count = 400,
         ingredients =
         {
-            {"science-pack-1",1},
-            {"science-pack-2",1},
-            {"science-pack-3",1},
+            {"automation-science-pack",1},
+            {"logistic-science-pack",1},
+            {"chemical-science-pack",1},
             {"military-science-pack",1},
-            {"high-tech-science-pack", 1}
+            {"production-science-pack", 1}
         },
         time = 20
     }
