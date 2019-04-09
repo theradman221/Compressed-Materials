@@ -186,7 +186,7 @@ for i, recipe in pairs (compress_recipes) do
 for i, recipe in pairs (uncompress_recipes) do
 				data:extend({recipe})
 				end
-for i, recipe in pairs (compress_items) do
+for i, item in pairs (compress_items) do
 				data:extend({item})
 				end
 --data:extend({compress_recipes})
