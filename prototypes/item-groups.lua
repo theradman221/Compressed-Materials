@@ -5,14 +5,14 @@ local compress_group = {
     type = "item-group",
     name = "compressor-compress",
     order = "z-compress-compress",
-    icon = "__Compressed Materials__/graphics/compress-menu-in.png",
+    icon = "__compressor__/graphics/compress-menu-in.png",
     icon_size = 64
 }
 local uncompress_group = {
     type = "item-group",
     name = "compressor-uncompress",
     order = "z-compress-uncompress",
-    icon = "__Compressed Materials__/graphics/compress-menu-out.png",
+    icon = "__compressor__/graphics/compress-menu-out.png",
     icon_size = 64
 }
 data:extend({compress_group, uncompress_group})

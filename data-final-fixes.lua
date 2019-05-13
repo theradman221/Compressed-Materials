@@ -7,6 +7,7 @@ for name, machine in pairs(data.raw["assembling-machine"]) do
         machine.crafting_categories[#machine.crafting_categories+1] = "compression"
     end
 end
+
 -------------------------------------------------------------------------------
 --[[Create Dynamic Recipes from Items]]--
 -------------------------------------------------------------------------------
@@ -28,7 +29,7 @@ end
 
 local get_icons = function(item)
     --Build the icons table
-    local icons = {{icon = "__Compressed Materials__/graphics/compress.png"}}
+    local icons = {{icon = "__compressor__/graphics/compress.png"}}
     if item.icons then
         for _ , icon in pairs(item.icons) do
             local shrink = util.table.deepcopy(icon)
@@ -42,27 +43,25 @@ local get_icons = function(item)
 end
 
 local uncompress_icons = function(icons)
-    icons[#icons+1] = {icon = "__Compressed Materials__/graphics/compress-out-arrow.png"}
+    icons[#icons+1] = {icon = "__compressor__/graphics/compress-out-arrow.png"}
     return icons
 end
 
-
 --Loop through all of these item categories
-if table then --added to get .17 compatability
-  for i, value in pairs (table) do -- added to get .17 compatability
-    if value == str then -- added to get .17 compatability
 for _, group in pairs({"item", "ammo", "module", "rail-planner", "repair-tool", "capsule", "mining-tool", "tool"}) do
     --Loop through all of the items in the category
     for _, item in pairs(data.raw[group]) do
         --Check for hidden flag to skip later
         local hidden = false
-        for _, flag in ipairs(item.flags) do
+        for _, flag in pairs(item.flags or {}) do
             if flag == "hidden" then hidden = true end
         end
-		--Don't compress items that only stack to 1
+
+        --Don't compress items that only stack to 1
         --Skip items with a super high stack size, Why compress something already this compressed!!!! (also avoids errors)
         --Skip hidden items and creative mode mod items
-        if item.stack_size > 1 and item.stack_size <= max_stack_size_to_compress and not (hidden or item.name:find("creative-mode")) then
+        local skip = hidden or item.name:find("creative%-mode") or item.name:find("picker%-cheat")
+        if not skip and item.stack_size > 1 and item.stack_size <= max_stack_size_to_compress then
             --Not really needed but we will save into the item in case we want to use it before we extend the items/recipes
             item_count = item_count + 1
 
@@ -117,7 +116,7 @@ for _, group in pairs({"item", "ammo", "module", "rail-planner", "repair-tool", 
                 localised_name = {"recipe-name.compress-item", loc_key},
                 localised_description = {"recipe-description.compress-item", loc_key},
                 category = "compression",
-                enabled = true,
+                enabled = false,
                 ingredients = {
                     {item.name, item.stack_size}
                 },
@@ -137,7 +136,7 @@ for _, group in pairs({"item", "ammo", "module", "rail-planner", "repair-tool", 
                 icons = uncompress_icons(icons),
 				icon_size = 32,
                 category = "compression",
-                enabled = true,
+                enabled = false,
                 ingredients = {
                     {"compressed-"..item.name, 1}
                 },
@@ -172,23 +171,11 @@ for _, group in pairs({"item", "ammo", "module", "rail-planner", "repair-tool", 
             local technology = data.raw["technology"][techname] or data.raw["technology"]["compression-1"]
             technology.effects[#technology.effects+1] = {type = "unlock-recipe", recipe = "uncompress-"..item.name}
             technology.effects[#technology.effects+1] = {type = "unlock-recipe", recipe = "compress-"..item.name}
-		end
-	end
-end
-end
-end
+        end
+    end
 end
 
 --Extend our items/recipes for use in the game.
-for i, recipe in pairs (compress_recipes) do
-				data:extend({recipe})
-				end
-for i, recipe in pairs (uncompress_recipes) do
-				data:extend({recipe})
-				end
-for i, item in pairs (compress_items) do
-				data:extend({item})
-				end
---data:extend({compress_recipes})
---data:extend({uncompress_recipes})
---data:extend({compress_items})
+data:extend(compress_recipes)
+data:extend(uncompress_recipes)
+data:extend(compress_items)

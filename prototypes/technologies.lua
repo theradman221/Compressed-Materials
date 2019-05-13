@@ -6,7 +6,7 @@ local tech1 = {
     --ores
     type = "technology",
     name = "compression-1",
-    icon = "__Compressed Materials__/graphics/compress-tech.png",
+    icon = "__compressor__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -27,7 +27,7 @@ local tech2 = {
     --items
     type = "technology",
     name = "compression-2",
-    icon = "__Compressed Materials__/graphics/compress-tech.png",
+    icon = "__compressor__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -48,7 +48,7 @@ local tech3 = {
     --tiles
     type = "technology",
     name = "compression-3",
-    icon = "__Compressed Materials__/graphics/compress-tech.png",
+    icon = "__compressor__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -69,7 +69,7 @@ local tech4 = {
     --ammo
     type = "technology",
     name = "compression-4",
-    icon = "__Compressed Materials__/graphics/compress-tech.png",
+    icon = "__compressor__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -92,7 +92,7 @@ local tech5 = {
     --entities
     type = "technology",
     name = "compression-5",
-    icon = "__Compressed Materials__/graphics/compress-tech.png",
+    icon = "__compressor__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -115,7 +115,7 @@ local tech6 = {
     --modules
     type = "technology",
     name = "compression-6",
-    icon = "__Compressed Materials__/graphics/compress-tech.png",
+    icon = "__compressor__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},
@@ -139,7 +139,7 @@ local tech7 = {
     --equipment
     type = "technology",
     name = "compression-7",
-    icon = "__Compressed Materials__/graphics/compress-tech.png",
+    icon = "__compressor__/graphics/compress-tech.png",
     icon_size = 128,
     order = "z",
     effects = {},

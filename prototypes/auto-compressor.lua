@@ -11,7 +11,7 @@ local recipe = {
 local item = {
     type = "item",
     name = "auto-compressor",
-    icon = "__Compressed Materials__/graphics/auto-compressor-icon.png",
+    icon = "__compressor__/graphics/auto-compressor-icon.png",
     flags = {},
     place_result = "auto-compressor",
 	icon_size = 32,
@@ -23,7 +23,7 @@ local item = {
 --GFX by Arch666Angel
 local auto_compressor = table.deepcopy(data.raw["furnace"]["electric-furnace"])
 auto_compressor.name = "auto-compressor"
-auto_compressor.icon = "__Compressed Materials__/graphics/auto-compressor-icon.png"
+auto_compressor.icon = "__compressor__/graphics/auto-compressor-icon.png"
 auto_compressor.crafting_categories = {"compression"}
 auto_compressor.minable = {mining_time = 5, result = "auto-compressor"}
 auto_compressor.allowed_effects = {"consumption", "speed", "pollution"}
@@ -31,7 +31,7 @@ auto_compressor.crafting_speed = 3
 auto_compressor.energy_usage = "225kW"
 auto_compressor.animation =
     {
-      filename = "__Compressed Materials__/graphics/auto-compressor-sheet.png",
+      filename = "__compressor__/graphics/auto-compressor-sheet.png",
       priority = "high",
       width = 160,
       height = 160,
